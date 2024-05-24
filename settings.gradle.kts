@@ -21,4 +21,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "Food Delivery"
 include(":app")
- 
+include(":sources:features:main_screen")
+include(":sources:base:network")
+include(":sources:features:product_details")
