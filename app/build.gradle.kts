@@ -44,5 +44,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.bundles.retrofit.moshi)
 
+    implementation(project(mapOf("path" to ":sources:base:network")))
 }
