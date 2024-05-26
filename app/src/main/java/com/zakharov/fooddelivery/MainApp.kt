@@ -1,25 +1,29 @@
 package com.zakharov.fooddelivery
 
-import android.app.Activity
 import android.app.Application
-import android.content.Context
-import androidx.fragment.app.Fragment
-import com.zakharov.fooddelivery.di.BaseComponent
-import com.zakharov.fooddelivery.di.DaggerBaseComponent
+import com.zakharov.core.App
+import com.zakharov.core.NetworkProvider
+import com.zakharov.fooddelivery.di.AppComponent
 
 
-class MainApp: Application() {
+class MainApp: Application(), App {
 
-    val baseComponent: BaseComponent by lazy {
-        DaggerBaseComponent.factory().create(this)
+    private var appComponent: AppComponent? = null
+
+    override fun onCreate() {
+        super.onCreate()
+        getAppComponent().inject(this)
     }
 
-    companion object {
-        @JvmStatic
-        fun baseComponent(context: Context) =
-            (context.applicationContext as MainApp).baseComponent
+    private fun getAppComponent(): AppComponent {
+        if (appComponent == null) {
+            appComponent = AppComponent.init(applicationContext)
+        }
+        return appComponent!!
     }
+
+    override fun getNetworkProvider(): NetworkProvider {
+        return getAppComponent()
+    }
+
 }
-
-fun Activity.baseComponent() = MainApp.baseComponent(this)
-fun Fragment.baseComponent() = MainApp.baseComponent(requireContext())

@@ -11,7 +11,10 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/sources" />
+            <option value="$PROJECT_DIR$/sources/api" />
+            <option value="$PROJECT_DIR$/sources/api/main_screen_api" />
             <option value="$PROJECT_DIR$/sources/base" />
+            <option value="$PROJECT_DIR$/sources/base/core" />
             <option value="$PROJECT_DIR$/sources/base/network" />
             <option value="$PROJECT_DIR$/sources/features" />
             <option value="$PROJECT_DIR$/sources/features/main_screen" />

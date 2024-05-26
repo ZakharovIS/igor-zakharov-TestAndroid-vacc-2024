@@ -1,11 +1,10 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    alias(libs.plugins.ksp)
 }
 
 android {
-    namespace = "com.zakharov.network"
+    namespace = "com.zakharov.core"
     compileSdk = 34
 
     defaultConfig {
@@ -35,8 +34,11 @@ android {
 
 dependencies {
 
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
     implementation(libs.dagger.android)
-    ksp(libs.dagger.compiler)
-    implementation(libs.bundles.retrofit.moshi)
-    implementation(project(mapOf("path" to ":sources:base:core")))
+    implementation(libs.retrofit)
+
+
 }

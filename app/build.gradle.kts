@@ -41,10 +41,14 @@ dependencies {
     implementation(libs.dagger.android)
     ksp(libs.dagger.compiler)
     implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.fragment.ktx)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.bundles.retrofit.moshi)
 
     implementation(project(mapOf("path" to ":sources:base:network")))
+    implementation(project(mapOf("path" to ":sources:base:core")))
+    implementation(project(mapOf("path" to ":sources:api:main_screen_api")))
+    implementation(project(mapOf("path" to ":sources:features:main_screen")))
 }
