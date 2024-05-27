@@ -51,4 +51,5 @@ dependencies {
     implementation(project(mapOf("path" to ":sources:base:core")))
     implementation(project(mapOf("path" to ":sources:api:main_screen_api")))
     implementation(project(mapOf("path" to ":sources:features:main_screen")))
+    implementation(project(mapOf("path" to ":sources:features:product_details")))
 }

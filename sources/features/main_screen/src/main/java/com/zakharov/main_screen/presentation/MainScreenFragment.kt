@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.setFragmentResult
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.zakharov.core.App
@@ -13,6 +15,9 @@ import com.zakharov.main_screen.databinding.FragmentMainScreenBinding
 import com.zakharov.main_screen.di.DaggerMainScreenComponent
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+
+private const val KEY_PRODUCT_ID = "Key ID"
+private const val KEY_MEAL = "KeyMeal"
 
 class MainScreenFragment : Fragment() {
 
@@ -34,7 +39,6 @@ class MainScreenFragment : Fragment() {
 
         DaggerMainScreenComponent.factory().create((requireActivity().application as App).getNetworkProvider()).inject(this)
 
-
         viewModel = ViewModelProvider(this, vmFactory)[MainScreenViewModel::class]
 
         binding = FragmentMainScreenBinding.inflate(inflater, container, false)
@@ -44,7 +48,6 @@ class MainScreenFragment : Fragment() {
 
         return binding.root
     }
-
 
     private fun bindAdapterToSource() {
         viewLifecycleOwner.lifecycleScope
@@ -62,6 +65,6 @@ class MainScreenFragment : Fragment() {
     }
 
     private fun onItemClick(item: Meal) {
-        TODO()
+        setFragmentResult(KEY_MEAL, bundleOf(KEY_PRODUCT_ID to item.id))
     }
 }

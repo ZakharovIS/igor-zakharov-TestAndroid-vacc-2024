@@ -12,16 +12,6 @@ import dagger.Component
 )
 interface MainScreenComponent {
 
-    companion object {
-
-        fun init(
-            networkProvider: NetworkProvider
-        ): MainScreenComponent {
-            return DaggerMainScreenComponent.factory()
-                .create(networkProvider)
-        }
-    }
-
     @Component.Factory
     interface Factory {
         fun create(
