@@ -2,7 +2,7 @@ package com.zakharov.product_details.data.utils
 
 import com.zakharov.product_details.data.entities.ProductDetails
 
-//Потом нормальную DTO написать надо бы
+//Потом нормальную DTO написать надо бы, вместо этого индийского кода))
 fun ProductDetails.getIngredients(): String {
     var ingredients = ""
     if (this.strIngredient1 != null && this.strIngredient1 != "")

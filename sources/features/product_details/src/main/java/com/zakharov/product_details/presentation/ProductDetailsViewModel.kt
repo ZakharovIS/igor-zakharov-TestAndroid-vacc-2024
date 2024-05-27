@@ -1,6 +1,5 @@
 package com.zakharov.product_details.presentation
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.zakharov.product_details.data.entities.ProductDetails

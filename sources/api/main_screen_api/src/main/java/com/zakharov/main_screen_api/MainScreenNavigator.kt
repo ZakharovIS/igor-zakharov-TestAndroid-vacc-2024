@@ -1,8 +1,5 @@
 package com.zakharov.main_screen_api
 
-import androidx.fragment.app.FragmentActivity
+//На будущее
 
-interface MainScreenNavigator {
-
-    fun openMainScreenFragment(fragmentActivity: FragmentActivity)
-}
+interface MainScreenNavigator

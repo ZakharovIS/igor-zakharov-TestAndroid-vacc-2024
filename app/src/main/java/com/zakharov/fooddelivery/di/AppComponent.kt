@@ -4,9 +4,7 @@ import android.content.Context
 import com.zakharov.core.NetworkProvider
 import com.zakharov.fooddelivery.MainApp
 import com.zakharov.network.di.NetworkComponent
-import dagger.BindsInstance
 import dagger.Component
-import retrofit2.Retrofit
 import javax.inject.Singleton
 
 @Singleton

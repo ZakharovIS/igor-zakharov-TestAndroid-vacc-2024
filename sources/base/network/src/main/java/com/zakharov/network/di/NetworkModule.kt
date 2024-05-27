@@ -6,7 +6,6 @@ import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import javax.inject.Singleton
 
 private const val BASE_URL = "https://www.themealdb.com/api/json/v1/1/"
 
